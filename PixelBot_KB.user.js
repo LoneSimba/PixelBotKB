@@ -250,9 +250,9 @@ function CoiPixelBot() {
         if(CoiPixelBot.debug)
             debugger;
         if (window.localStorage.getItem('DROP_FIRST_TIME_COI') != '1') {
-            document.querySelectorAll(".App__advance > .Button.primary")[0].click();
+            document.querySelectorAll(".App__advance > .Button.primary").click();
         } else if (window.localStorage.getItem('DROP_HEADER_COI') != '1') {
-            document.querySelectorAll(".Header__close")[0].click();
+            document.querySelectorAll(".Header__close").click();
         } else if (!CoiPixelBot.inited && CoiPixelBot.canvas) {
             CoiPixelBot.ctx = CoiPixelBot.canvas.getContext("2d");
             CoiPixelBot.init();
