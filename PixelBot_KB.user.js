@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Coi Pixel Bot
 // @namespace    http://tampermonkey.net/
-// @version      3.0
+// @version      3.0.1
 // @description  try to take over the world!
 // @author       Flyink13, DarkKeks, LoneSimba
 // @match        https://pixel.vkforms.ru/*
@@ -12,6 +12,11 @@
 
 function CoiPixelBot() {
     window.CoiPixelBot = CoiPixelBot;
+
+    function qe(x) {
+        if(!document.querySelectorAll(x)) return false;
+        return document.querySelectorAll(x)[0];
+    }
 
     CoiPixelBot.url = {
         script: 'https://github.com/LoneSimba/PixelBotKB/raw/master/PixelBot_KB.user.js',
@@ -124,7 +129,7 @@ function CoiPixelBot() {
         };
 
         var pxColor = CoiPixelBot.getColor(CoiPixelBot.ctx.getImageData(x, y + 1, 1, 1).data, 0);
-        var colorEl = document.querySelectorAll('[style="background-color: ' + color + ';"]')[0];
+        var colorEl = qe('[style="background-color: ' + color + ';"]')[0];
         if (!colorEl) {
             console.log("color error %c " + color, 'background:' + color + ';');
             CoiPixelBot.setState("Ошибка подбора цвета " + color);
@@ -152,7 +157,7 @@ function CoiPixelBot() {
         CoiPixelBot.canvasEvent("click", q);
         q.button = 0;
         CoiPixelBot.canvasEvent("mouseup", q);
-        document.querySelectorAll(".App__confirm button")[0].click();
+        qe(".App__confirm button").click();
     };
 
     CoiPixelBot.draw = function() {
@@ -250,9 +255,9 @@ function CoiPixelBot() {
         if(CoiPixelBot.debug)
             debugger;
         if (window.localStorage.getItem('DROP_FIRST_TIME_COI') != '1') {
-            document.querySelectorAll(".App__advance > .Button.primary").click();
+            qe(".App__advance > .Button.primary").click();
         } else if (window.localStorage.getItem('DROP_HEADER_COI') != '1') {
-            document.querySelectorAll(".Header__close").click();
+            qe(".Header__close").click();
         } else if (!CoiPixelBot.inited && CoiPixelBot.canvas) {
             CoiPixelBot.ctx = CoiPixelBot.canvas.getContext("2d");
             CoiPixelBot.init();
