@@ -3,10 +3,10 @@
 // @namespace    http://tampermonkey.net/
 // @version      3.0
 // @description  try to take over the world!
-// @author       Flyink13, DarkKeks
+// @author       Flyink13, DarkKeks, LoneSimba
 // @match        https://pixel.vkforms.ru/*
-// @downloadURL  https://rawgit.com/Archinect/PublicPixelBot-master/master/PixelBot.user.js
-// @updateURL    https://rawgit.com/Archinect/PublicPixelBot-master/master/PixelBot.user.js
+// @downloadURL  https://github.com/LoneSimba/PixelBotKB/raw/master/PixelBot_KB.user.js
+// @updateURL    https://github.com/LoneSimba/PixelBotKB/raw/master/PixelBot_KB.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -14,7 +14,7 @@ function CoiPixelBot() {
     window.CoiPixelBot = CoiPixelBot;
 
     CoiPixelBot.url = {
-        script: 'https://rawgit.com/Archinect/PublicPixelBot-master/master/PixelBot.user.js',
+        script: 'https://github.com/LoneSimba/PixelBotKB/raw/master/PixelBot_KB.user.js',
         image:  'https://image.ibb.co/d0VQjU/bot.png'
     };
 
