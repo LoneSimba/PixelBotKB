@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Pixel Bot
 // @namespace    http://tampermonkey.net/
-// @version      3.1
+// @version      3.2
 // @description  try to take over the world!
 // @author       Flyink13, DarkKeks, LoneSimba
 // @match        https://pixel.vkforms.ru/*
@@ -20,7 +20,7 @@ function PixelBot() {
 
     PixelBot.url = {
         script: window.botUrl,
-        image: 'https://image.ibb.co/btkt4U/bot_2018.png'
+        image: 'https://image.ibb.co/hrit69/image.png'
     };
 
     PixelBot.urlGen = {
@@ -227,7 +227,7 @@ function PixelBot() {
     };
 
     PixelBot.wait = setInterval(function() {
-        if(PixelBot.debug)
+        if(PixelBot.debug) {
             debugger;
         if (window.localStorage.getItem('DROP_FIRST_TIME_VK12') != '1') {
             qe(".App__advance > .Button.primary").click();
@@ -252,6 +252,7 @@ function PixelBot() {
             PixelBot.pts--;
             PixelBot.draw();
         }
+      }
     }, 1e3 / 2);
 
     PixelBot.refresh = setTimeout(function() {
